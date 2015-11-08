@@ -8,6 +8,8 @@
 
 		<link href="/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 		<link href="/lib/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
+
+		<link href="/sidebar.css" rel="stylesheet">
 		<link href="/app.css" rel="stylesheet">
 
 		<script src="/bundle.js"></script>
@@ -20,6 +22,58 @@
 	</head>
 
 	<body ng-controller="MainController as main">
-		<div class="container" ui-view></div>
+		<div id="wrapper">
+			<!-- Sidebar -->
+			<div id="sidebar-wrapper">
+				<ul class="sidebar-nav">
+					<li class="sidebar-brand">
+						<h1>
+							Brand
+						</h1>
+					</li>
+					<li>
+						<a href="#">Dashboard</a>
+					</li>
+					<li>
+						<a href="#" class="active">Shortcuts</a>
+					</li>
+					<li>
+						<a href="#">Overview</a>
+					</li>
+					<li>
+						<a href="#">Events</a>
+					</li>
+					<li>
+						<a href="#">About</a>
+					</li>
+					<li>
+						<a href="#">Services</a>
+					</li>
+					<li>
+						<a href="#">Contact</a>
+					</li>
+				</ul>
+			</div>
+			<!-- /#sidebar-wrapper -->
+
+			<!-- Page Content -->
+			<div id="page-content-wrapper">
+				<div class="container-fluid" ui-view>
+					
+				</div>
+			</div>
+			<!-- /#page-content-wrapper -->
+
+		</div>
+		<!-- /#wrapper -->
+
+		<!-- Menu Toggle Script
+		<script>
+		$("#menu-toggle").click(function(e) {
+			e.preventDefault();
+			$("#wrapper").toggleClass("toggled");
+		});
+		</script>
+		 -->
 	</body>
 </html>
