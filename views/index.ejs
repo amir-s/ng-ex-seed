@@ -22,47 +22,14 @@
 	</head>
 
 	<body ng-controller="MainController as main">
-		<div id="wrapper">
-			<!-- Sidebar -->
+		<div id="wrapper" ng-class="{toggled: isSidebarOpen()}">
 			<div id="sidebar-wrapper">
-				<ul class="sidebar-nav">
-					<li class="sidebar-brand">
-						<h1>
-							Brand
-						</h1>
-					</li>
-					<li>
-						<a href="#">Dashboard</a>
-					</li>
-					<li>
-						<a href="#" class="active">Shortcuts</a>
-					</li>
-					<li>
-						<a href="#">Overview</a>
-					</li>
-					<li>
-						<a href="#">Events</a>
-					</li>
-					<li>
-						<a href="#">About</a>
-					</li>
-					<li>
-						<a href="#">Services</a>
-					</li>
-					<li>
-						<a href="#">Contact</a>
-					</li>
-				</ul>
+				<ul class="sidebar-nav" ng-include="'templates/sidebar.html'"></ul>
 			</div>
-			<!-- /#sidebar-wrapper -->
 
-			<!-- Page Content -->
 			<div id="page-content-wrapper">
-				<div class="container-fluid" ui-view>
-					
-				</div>
+				<div class="container-fluid" ui-view></div>
 			</div>
-			<!-- /#page-content-wrapper -->
 
 		</div>
 		<!-- /#wrapper -->

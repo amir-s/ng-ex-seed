@@ -193,23 +193,30 @@ var NG_MODULE = 'MyApp'
 }();
 !function () {
 
-	function LoginController(AuthService) {
+	function LoginController(AuthService, $rootScope) {
 		var self = this;
 		self.user = {};
 		
 		self.submit = function () {
 			alert(self.user.username+":"+self.user.password);
+			$rootScope.setSidebar(false);
 		}
 		
 	}
-	LoginController.$inject = ['AuthService']
+	LoginController.$inject = ['AuthService', '$rootScope']
 	angular.module(NG_MODULE).controller('LoginController', LoginController);
 	
 }();
 !function () {
 
 	function MainController ($rootScope) {
-		
+		var sidebar = true;
+		$rootScope.isSidebarOpen = function () {
+			return !sidebar;
+		}
+		$rootScope.setSidebar = function (v) {
+			sidebar = v;
+		}
 	}
 	MainController.$inject = ['$rootScope'];
 	angular.module(NG_MODULE).controller('MainController', MainController);
